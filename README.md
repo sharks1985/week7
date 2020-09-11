@@ -31,6 +31,7 @@ window, web pages, and the elements on these pages. Here is a list of some
 important methods:
 
 ![webdriver methods](data/webdriver2.PNG)
+
 ![webdriver methods](data/webdriver3.PNG)
 
 
