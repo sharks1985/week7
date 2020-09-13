@@ -8,7 +8,7 @@ driver.implicitly_wait(20)  # read more about this
 
 driver.get("https://letskodeit.teachable.com/p/practice")
 print("opened the browser and google website")
-time.sleep(1)
+time.sleep(1) # thread.sleep() in java
 
 # 1. find all buttons, working with list of elements
 buttons = driver.find_elements_by_xpath('//button')
