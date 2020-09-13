@@ -131,3 +131,19 @@ def click_element_by_xpath(xpath):
     except NoSuchElementException as err:
         print(f"Check element by following xpath: {xpath}")
         print(err)
+
+
+def enter_text_by_xpath(xpath, some_text):
+    """
+    this method finds the element by xpath and enters text in it
+    :param xpath: correct unique xpath of single INPUT element
+    :param some_text: text to be entered in the element
+    """
+    try:
+        print(f"xpath provided: {xpath}")
+        element = driver.find_element_by_xpath(xpath)
+        print(f"entering the following text :{some_text}")
+        element.send_keys(some_text)
+    except WebDriverException as err:
+        print(f"Entering Text failed by following xpath: {xpath}")
+        print(err)
