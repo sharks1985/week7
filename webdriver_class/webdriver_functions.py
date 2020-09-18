@@ -1,4 +1,5 @@
 import time
+import unittest2
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException, NoSuchElementException
 
@@ -9,6 +10,10 @@ driver = webdriver.Chrome()
 # driver.maximize_window()
 driver.implicitly_wait(20)  # read more about this
 
+
+# class TestAssrt(unittest2.TestCase):
+#     def anythAssert(self):
+#         assertEqual(25, 50-35+10)
 
 def launch_website(url):
     driver.get(url)
@@ -82,7 +87,9 @@ def web_driver_properties_switch_to_tab():
 
     # verifying new tabe url and title is by Requirement
     assert url2 == 'https://letskodeit.teachable.com/courses'
+
     assert title2 == "Let's Kode It"
+    # assertEqual(title2, "Let's Kode It") alternative
 
     # """3. closing tabs vs closing a browser"""
     driver.close()  # this will close the current tab
