@@ -1,5 +1,4 @@
 import time
-import unittest2
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException, NoSuchElementException
 
