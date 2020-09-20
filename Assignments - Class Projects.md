@@ -6,6 +6,13 @@
 - finding all elements (xpath, id, name)
 - verify that account is created by message, logout button
 
+Example to verify a text after creating the account.
+```python
+heading_xpath = "//h1[@class='page-heading']"
+element = driver.find_element_by_xpath(heading_xpath)
+assert 'Your Account' in element.text
+
+```
 
 ## Project 2 (hard project): Creating facebook marketplace list with uploading a file
 
