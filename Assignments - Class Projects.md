@@ -7,7 +7,7 @@
 - verify that account is created by message, logout button
 
 
-# Project 2 (hard project): Creating facebook marketplace list with uploading a file
+## Project 2 (hard project): Creating facebook marketplace list with uploading a file
 
 - open browser, launch the "https://www.facebook.com/marketplace",
 - login to facebook
