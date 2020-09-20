@@ -1,17 +1,23 @@
+# Class Assignments
 
-# week8 09/19/2020,
-# Class project1: Creating an account in automationpractice.com
-# H/W :
-# Sign In> enter email> click on Create Account > Fill the forms
-# finding all elements (xpath, id, name)
-# verify that account is created by message, logout button
+## Project 1: Creating an account in automationpractice.com
+
+- Sign In> enter email> click on Create Account > Fill the forms
+- finding all elements (xpath, id, name)
+- verify that account is created by message, logout button
 
 
-#  Class project: hard project
-# uploading a file
-# open browser, launch the "https://www.facebook.com/marketplace",
-# login to facebook
-# create new listing, choose item for sale, verify the url: "https://www.facebook.com/marketplace/create/item"
+# Project 2 (hard project): Creating facebook marketplace list with uploading a file
+
+- open browser, launch the "https://www.facebook.com/marketplace",
+- login to facebook
+- create new listing, choose item for sale, verify the url: "https://www.facebook.com/marketplace/create/item"
+
+Here is the some of the locators you will need:
+
+```python
+# imports here
+
 upload_xpath = "//input[@type='file' and contains(@accept, 'image')]"
 price_input = "//label[@aria-label='Price']//input[contains(@id, 'jsc_c_')]"
 title_input = "//label[@aria-label='Title']//input[contains(@id, 'jsc_c_')]"
@@ -33,14 +39,22 @@ next_button = driver.find_element_by_xpath(next_button_xpath)
 if next_button.is_enabled():
     next_button.click()
     print("Next button is clicked.")
+```
 
 
-# after listing is published verify url= "https://www.facebook.com/marketplace/you/selling"
-# verify the item is listed
+- after listing is published verify url= "https://www.facebook.com/marketplace/you/selling"
+- verify the item is listed
+
+```python
+
 active_item1_xpath = f"//span[contains(text(), '{title}')]"
 active_item1 = driver.find_element_by_xpath(active_item1_xpath)
 time.sleep(5)
 assert active_item1.is_displayed()
 print("Test is successfully executed!!")
+```
 
-# Commit , push to github, and submit with google form (akmal to send this form in the chat)
+## How to Submit
+- Commit, push to your github
+- Submit your github links in this [google form.](https://forms.gle/doeKiU6CkNdc4jm28)
+
