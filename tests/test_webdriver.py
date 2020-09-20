@@ -1,8 +1,10 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
-
+import yaml
 from steps.webdriver_functions import *
 from steps.webelement_functions import *
+
+data = load_yaml(f"{ROOT_DIR}/data/config.yml")
 
 # # ********* Scenario with correct steps
 # launch_website("https://letskodeit.teachable.com/p/practice")
@@ -20,9 +22,26 @@ from steps.webelement_functions import *
 # close_browser()
 
 # # *********** Scenario: Login to "http://automationpractice.com/index.php"
-web_url = "http://automationpractice.com/index.php"
-username = "hello@email.com"
-pswd = "$Password001"
+# web_url = "http://automationpractice.com/index.php"
+# username = "hello@email.com"
+# pswd = "$Password001"
+
+# 'data' is the same information as data1 below:
+data1 = {
+    'scenario1': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'},
+    'scenario2': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'}
+    }
+
+web_url = data['scenario1']['web_url']
+username = data['scenario1']['username']
+pswd = data['scenario1']['password']
+
+# url = data['url']
+# email = data['email']
+# passcode = data['passcode']
+
+
+
 # login_to_automation_practice(web_url, username, pswd)
 # login_to_automation_practice(email=username, password=pswd, url=web_url)
 
@@ -44,6 +63,9 @@ test_drop_down_list()
 
 # Agenda for 09/20/2020
 # alert (confirm, cancel) - java script
+
+
+
 # hover over element
 #  explicit waits , and difference between implicit_wait()
 

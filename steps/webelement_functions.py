@@ -1,8 +1,20 @@
+import yaml
+from os.path import dirname, abspath
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
 from steps.webdriver_functions import *
+
+# to find the full location of your project in your system use this
+ROOT_DIR = dirname(dirname(abspath(__file__)))
+
+
+def load_yaml(filepath):
+    with open(filepath, 'r') as data:
+        document = yaml.safe_load(data)
+    return document
 
 
 def login_to_automation_practice(url, email, password):
@@ -103,10 +115,10 @@ def test_get_attribute():
 def test_drop_down_list():
     launch_website("https://letskodeit.teachable.com/p/practice")
 
-    dd_list_xpath = "//select[@id='carselect']" # real ddown that selenium can handle
+    dd_list_xpath = "//select[@id='carselect']"  # real ddown that selenium can handle
     dd_list = driver.find_element_by_xpath(dd_list_xpath)
 
-    car_selection = Select(dd_list) # !!!!!!!!!!
+    car_selection = Select(dd_list)  # !!!!!!!!!!
 
     text_options = [option.text for option in car_selection.options]
     print("Options available in the list: ", text_options)
@@ -127,4 +139,3 @@ def test_drop_down_list():
     car_selection.select_by_visible_text('BMW')
     text_selected_ones = [option.text for option in car_selection.all_selected_options]
     print("Options selected: ", text_selected_ones)
-
