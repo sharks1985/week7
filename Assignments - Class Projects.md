@@ -42,7 +42,7 @@ def load_yaml(filepath):
 ```
 
 ```yaml
-# data/config.yaml
+# data/config.yml
 url: "http://automationpractice.com/index.php"
 email: "hello@email.com"
 password: "$Password001"
