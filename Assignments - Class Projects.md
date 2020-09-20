@@ -7,7 +7,11 @@
 - verify that account is created by message, logout button
 
 Example to verify a text after creating the account.
+
 ```python
+from selenium import webdriver
+driver = webdriver.Chrome()
+
 heading_xpath = "//h1[@class='page-heading']"
 element = driver.find_element_by_xpath(heading_xpath)
 assert 'Your Account' in element.text
@@ -16,8 +20,11 @@ assert 'Your Account' in element.text
 
 ## Project 2 (hard project): Creating facebook marketplace list with uploading a file
 
+### Scenario 1
 - open browser, launch the "https://www.facebook.com/marketplace",
 - login to facebook
+
+### Scenario 2
 - create new listing, choose item for sale, verify the url: "https://www.facebook.com/marketplace/create/item"
 
 Here is the some of the locators you will need:
@@ -48,18 +55,26 @@ if next_button.is_enabled():
     print("Next button is clicked.")
 ```
 
-
 - after listing is published verify url= "https://www.facebook.com/marketplace/you/selling"
 - verify the item is listed
 
 ```python
-
 active_item1_xpath = f"//span[contains(text(), '{title}')]"
 active_item1 = driver.find_element_by_xpath(active_item1_xpath)
 time.sleep(5)
 assert active_item1.is_displayed()
 print("Test is successfully executed!!")
 ```
+
+### Scenario 3
+
+Remove the item from the list.
+
+```python
+# last line should be 
+assert not active_item1.is_displayed()
+```
+
 
 ## How to Submit
 - Commit, push to your github
