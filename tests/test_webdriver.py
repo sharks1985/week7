@@ -27,10 +27,10 @@ data = load_yaml(f"{ROOT_DIR}/data/config.yml")
 # pswd = "$Password001"
 
 # 'data' is the same information as data1 below:
-data1 = {
-    'scenario1': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'},
-    'scenario2': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'}
-    }
+# data1 = {
+#     'scenario1': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'},
+#     'scenario2': {'web_url': 'http..', 'username': 'hello', 'password': 'yourpass'}
+#     }
 
 web_url = data['scenario1']['web_url']
 username = data['scenario1']['username']
@@ -39,7 +39,6 @@ pswd = data['scenario1']['password']
 # url = data['url']
 # email = data['email']
 # passcode = data['passcode']
-
 
 
 # login_to_automation_practice(web_url, username, pswd)
@@ -61,11 +60,17 @@ pswd = data['scenario1']['password']
 test_drop_down_list()
 # hw/ try on automationpractice.com on Women tab, sort by
 
-# Agenda for 09/20/2020
+# Agenda for 09/20/2020 ****************************
+# yaml file and information hiding using data files
 # alert (confirm, cancel) - java script
-
-
+test_alerts()
 
 # hover over element
+test_mouse_hovering()
+close_browser()
+
+
+# Agenda: next class
 #  explicit waits , and difference between implicit_wait()
+# take a screenshot with selenium
 

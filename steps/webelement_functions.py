@@ -42,7 +42,6 @@ def login_to_automation_practice(url, email, password):
     print("successfully signed in ")
     print("signing out now...")
     click_element_by_xpath(sign_out_link)
-    close_browser()
 
 
 def test_right_click():
@@ -139,3 +138,67 @@ def test_drop_down_list():
     car_selection.select_by_visible_text('BMW')
     text_selected_ones = [option.text for option in car_selection.all_selected_options]
     print("Options selected: ", text_selected_ones)
+
+
+def test_alerts():
+    """
+    Switching to alert, get text of the alert, confirm and cancel js alerts.
+    """
+    name_input = "//input[@id='name']"
+    confirm_button = "//input[@id='confirmbtn']"
+
+    launch_website("https://letskodeit.teachable.com/p/practice")
+    driver.find_element_by_xpath(name_input).send_keys('John')
+    driver.find_element_by_xpath(confirm_button).click()
+    print("alert is clicked")
+
+    # test case 1: confirm
+    alert = driver.switch_to.alert
+    time.sleep(5)
+    alert_text = alert.text
+    print("1. Alert text captured: ", alert_text)
+    assert 'John' in alert_text
+    # clicking OK button on alert
+    alert.accept()
+    print("Alert confirmed!")
+
+    # test case 2: cancel
+    driver.find_element_by_xpath(name_input).send_keys('Jane')
+    driver.find_element_by_xpath(confirm_button).click()
+    print("alert is clicked to cancel")
+
+    alert = driver.switch_to.alert
+    time.sleep(5)
+    alert_text = alert.text
+    print("2. Alert text captured: ", alert_text)
+    assert 'Jane' in alert_text
+    # clicking cancel on alert
+    alert.dismiss()
+    print("Alert Canceled!")
+
+
+def test_mouse_hovering():
+    # following lines were for automaitonpractice.com
+    # product_name_xpath = "//ul[@id='homefeatured']//a[@class='product-name' and @title='Faded Short Sleeve T-shirts']"
+    # add_to_cart_button = "//div/a[@title='Add to cart' and @data-id-product='1']"
+    # product_xpath=f"{product_name_xpath}/../.." # this path goes to parent and then to grandparent of the element
+    # product_add_to_cart = f"{product_xpath}{add_to_cart_button}"
+
+    mouse_hover_xpath = "//button[@id='mousehover']"
+    top_option = "//a[contains(text(),'Top')]"
+
+    launch_website("https://letskodeit.teachable.com/p/practice")
+
+    # mouse hovering before clicking the top option
+    mouse_hover_button = driver.find_element_by_xpath(mouse_hover_xpath)
+
+    actions = ActionChains(driver)
+    actions.move_to_element(mouse_hover_button).perform()
+    print("Mouse hovering is performed.")
+
+    driver.find_element_by_xpath(top_option).click()
+    print("Top option is clicked.")
+    time.sleep(2)
+    expected_url = "https://letskodeit.teachable.com/p/practice#top"
+    assert expected_url == driver.current_url
+    print("Url contains #top. Test Passed.")
