@@ -1,0 +1,14 @@
+url: "http://automationpractice.com/index.php"
+email: "hello@email.com"
+passcode: "$Password001"
+
+
+scenario1:
+  web_url: "http://automationpractice.com/index.php"
+  username: "hello@email.com"
+  password: "$Password001"
+
+scenario2:
+  web_url: "http://automationpractice.com/index.php"
+  username: "hello@email.com"
+  password: "$Password001"
