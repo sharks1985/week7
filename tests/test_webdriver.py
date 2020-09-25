@@ -1,6 +1,6 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
-import yaml
+#import yaml
 from steps.webdriver_functions import *
 from steps.webelement_functions import *
 
