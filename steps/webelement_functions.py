@@ -1,4 +1,4 @@
-import yaml
+#import yaml
 from os.path import dirname, abspath
 
 from selenium.webdriver import ActionChains
@@ -11,10 +11,10 @@ from steps.webdriver_functions import *
 ROOT_DIR = dirname(dirname(abspath(__file__)))
 
 
-def load_yaml(filepath):
-    with open(filepath, 'r') as data:
-        document = yaml.safe_load(data)
-    return document
+#def load_yaml(filepath):
+    #with open(filepath, 'r') as data:
+        #document = yaml.safe_load(data)
+    #return document
 
 
 def login_to_automation_practice(url, email, password):
