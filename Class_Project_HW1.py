@@ -9,7 +9,7 @@ from selenium.webdriver.support.select import Select0
 
 sign_in_link = "//a[@class='login']"
 email_input_xpath = "//input[@id='email_create']"
-email = "tatianashark@email.com"
+email = "tatianashark777@email.com"
 create_an_account_button = "//form[@id='create-account_form']//span[1]"
 title_input = "//input[@id='id_gender2']"
 first_name_input_xpath = "//input[@id='customer_firstname']"
