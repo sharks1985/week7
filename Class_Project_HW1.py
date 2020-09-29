@@ -5,7 +5,7 @@
 # - verify that account is created by message, logout button
 
 from steps.webdriver_functions import *
-from selenium.webdriver.support.select import Select0
+from selenium.webdriver.support.select import Select
 
 sign_in_link = "//a[@class='login']"
 email_input_xpath = "//input[@id='email_create']"
