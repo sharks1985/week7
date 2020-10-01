@@ -1,3 +1,4 @@
+TATIANA SHARKUNOVA
 # Project 1: Creating an account in automationpractice.com
 
 # - Sign In> enter email> click on Create Account > Fill the forms
